@@ -24,6 +24,11 @@ $(function(){
     $('#menu_wrap').animate({right:'-60%'},400);
   });
 
+  // 웹의 메뉴 숨김 처리
+  $('#menu_wrap').mouseleave(function(){
+    $('#menu_wrap').animate({right:'-60%'},400);
+  });
+
   // 메뉴 동작
   $('#gnb > ul > li').click(function(){
     // 1단 메뉴(on 클래스)
@@ -40,7 +45,8 @@ $(function(){
   // 초기설정
   $('.top_btn').hide();
   // 이벤트 => scroll 이벤트 대상(window)
-  $(window).scroll(function(){
+  // 세로스크롤바 숨김 => scroll 이벤트 대상 변경(body)
+  $('body').scroll(function(){
     // 스크롤 높이 + 화면 높이
     let sc_num = $(this).scrollTop();
     let h_num = $(this).height();
